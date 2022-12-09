@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2rem;
+
+    .header__principal{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .header__name{
+            font-size: 2rem;
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+        }
+
+        .logo__header img{
+            width: 5rem;
+        }
+    }
+
+    .header__secondary{
+        display: flex;
+        flex-direction: column;
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+
+
+        .text-1{
+            text-align: right;
+            font-size: 2.5rem;
+            color: #ee2b4f;
+        }
+    }
+}

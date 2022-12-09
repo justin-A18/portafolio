@@ -1,0 +1,29 @@
+.container__footer{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+
+    .footer__cargo{
+        color: white;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        margin-left: 2rem;
+
+        .in{
+            color: #FF2B51;
+        }
+    }
+
+    .footer__redes{
+        display: flex;
+        gap: 2rem;
+        margin-right: 2rem;
+        
+        img{
+            width: 2rem;
+            fill: white;
+        }
+    }
+}

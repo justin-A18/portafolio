@@ -1,0 +1,99 @@
+.container__principal{
+
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .content__center{
+
+            width: 50rem;
+            height: 50rem;
+            position: relative;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .circle {
+                width: 50rem;
+                height: 50rem;
+                border-radius: 50%;
+                margin: auto;
+                animation: girar2 2s linear infinite alternate;
+                
+            }
+
+            @keyframes girar2 {
+                0%{
+                    box-shadow: 0 0 1px 5px #FF2B51,
+                    inset 0 0 1px 5px #FF2B51;
+                }
+                100%{
+                    box-shadow: 0 0 1px 10px #FF2B51,
+                    inset 0 0 1px 10px #FF2B51;
+                }
+            }
+
+            .difuminado{
+                filter: blur(2rem);
+                transform: rotateX(-20deg);
+                animation: girar 2s linear infinite alternate;
+            }
+
+            @keyframes girar {
+                0%{
+                    border: 1rem solid #FF2B51;
+                }
+                100%{
+                    filter: blur(3.5rem);
+                    border: 2rem solid #FF2B51;
+                }
+            }
+
+            .normal{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .image{
+                position: absolute;
+                bottom: -5rem;
+                left: 50%;
+                transform: translateX(-40%);
+                
+                img{
+                    width: 30rem;
+                }
+
+            }
+        }
+        .content__rigth{
+            writing-mode: vertical-lr;
+
+            .navegation{
+
+                display: flex;
+                margin-right: 2rem;
+                list-style: none;
+                gap: 5rem;
+                font-size: 1.5rem;
+
+                .nav__links{
+                    text-decoration: none;
+                    color: white;
+                    text-transform: uppercase;
+                    letter-spacing: .4rem;
+                    transition: all 500ms ease-in-out 200ms;
+
+                    &:hover{
+                        color: #FF2B51;
+                    }
+                }
+            }
+        }
+    }
+
+}

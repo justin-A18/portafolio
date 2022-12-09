@@ -1,0 +1,25 @@
+:root{
+    --color:#FF2B51;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    color: #FF2B51;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+}
+
+h3{
+    margin: 0;
+}

@@ -1,0 +1,19 @@
+---
+	interface Props {
+		name: string,
+		url: string
+		archivo?: string
+	}
+
+	const {url,name,archivo} = Astro.props
+---
+
+<a
+	href={url}
+	download={archivo}
+	class='flex items-center gap-2 border-[1px] border-[#344256] dark:border-white  p-2 hover:scale-[1.1] transition rounded-lg'
+	target="_blank"
+	rel="noopener noreferrer">
+	<slot />
+	<h2>{name}</h2>
+</a>

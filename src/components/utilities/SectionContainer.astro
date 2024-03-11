@@ -1,0 +1,12 @@
+---
+	interface Props {
+		moreClass?: string
+	}
+
+	const {moreClass} = Astro.props
+
+---
+
+<section class={`flex flex-col gap-8 ${moreClass}`}>
+	<slot/>
+</section>

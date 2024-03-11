@@ -1,0 +1,52 @@
+---
+	import SocialPill from '../utilities/SocialPill.astro'
+	import Linkedin from "../icons/Linkedin.astro";
+	import Github from "../icons/Github.astro";
+	import File from "../icons/File.astro";
+	import SectionContainer from '../utilities/SectionContainer.astro';
+
+	interface Props {
+		avatar: string,
+		author: string
+	}
+
+	const {avatar,author} = Astro.props
+
+---
+
+<SectionContainer moreClass='items-center justify-center md:flex-row'>
+	<img
+		class='rounded-full object-cover size-48 border-[10px] border-slate-300 dark:border-[#161E2D] shadow-2xl'
+		src={avatar}
+		alt='profile'
+	/>
+
+	<div class='dark:text-[#E9E9EA] gap-2 flex flex-col items-center md:items-start'>
+		<h1 class='text-2xl dark:text-[#E9E9EA] text-[#475569] font-bold sm:text-3xl md:text-4xl'>{author}</h1>
+		<p class='dark:text-[#C4CEDB] text-[#344256] sm:text-lg text-center'>
+			I'm passionate about web development and design.
+		</p>
+
+		<footer class='flex items-center flex-wrap justify-center gap-4 mt-3'>
+			<SocialPill name="Linkedin" url="https://www.linkedin.com/in/dev-justinh">
+				<Linkedin/>
+			</SocialPill>
+
+			<SocialPill name="Github" url="https://github.com/justin-A18">
+				<Github/>
+			</SocialPill>
+
+			{
+				/*
+				<SocialPill name="" url="mailto:justin.hv08@gmail.com">
+					<Email/>
+				</SocialPill>
+				*/
+			}
+
+			<SocialPill name='CV' url='https://drive.google.com/file/d/168E64dIKLg7fRpNEnICWfdg7iBWNIG-k/view?usp=sharing'>
+				<File/>
+			</SocialPill>
+		</footer>
+	</div>
+</SectionContainer>

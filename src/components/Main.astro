@@ -1,0 +1,25 @@
+---
+import SectionProfile from './views/SectionProfile.astro'
+import SectionExperience from './views/SectionExperience.astro'
+import SectionProjects from './views/SectionProjects.astro'
+
+
+interface Props {
+	avatar: string
+	author: string
+}
+
+
+const {avatar,author} = Astro.props;
+---
+
+<main class="w-full md:max-w-3xl mx-auto flex flex-col px-4 gap-16">
+	<SectionProfile author={author} avatar={avatar}/>
+
+	<hr class="border w-full border-gray-200 dark:border-gray-600 rounded-md">
+
+	<SectionExperience/>
+
+	<SectionProjects/>
+	
+</main>

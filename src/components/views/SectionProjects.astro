@@ -1,0 +1,35 @@
+---
+import SectionContainer from '../utilities/SectionContainer.astro';
+import TitleSection from '../utilities/TitleSection.astro';
+import CardStar from '../utilities/CardStar.astro';
+import CardPopular from '../utilities/CardPopular.astro';
+
+import Star from '../icons/Star.astro';
+
+import { projects } from '../../data/projects.astro';
+import { Category } from '../../types';
+---
+
+<SectionContainer>
+	<TitleSection>
+		<Star /> Projects
+	</TitleSection>
+
+	<div class='flex flex-col items-center gap-7'>
+		<div class='w-full grid gap-10'>
+			{
+				projects
+					.filter((project) => project.category === Category.Star)
+					.map((info) => <CardStar {...info} />)
+			}
+		</div>
+
+		<div class='w-full grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-5'>
+			{
+				projects
+					.filter((project) => project.category === Category.Popular)
+					.map((info) => <CardPopular {...info} />)
+			}
+		</div>
+	</div>
+</SectionContainer>

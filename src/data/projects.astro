@@ -1,0 +1,95 @@
+---
+import {Category,type Projects} from '../types'
+import React from '../components/icons/React.astro'
+import Tailwind from '../components/icons/Tailwind.astro'
+import Redux from '../components/icons/Redux.astro'
+import Typescript from '../components/icons/Typescript.astro'
+import Router from '../components/icons/Router.astro'
+import Zustand from '../components/icons/Zustand.astro'
+
+
+export const projects: Projects[] = [
+	{
+		id: 1,
+		image: '/project-1.jpg',
+		category: Category.Star,
+		title: 'Project Hub',
+		url_demo: 'https://projecthubx.netlify.app/',
+		url_github: 'https://github.com/justin-A18/projectHub',
+		description: 'Project Hub simplifica la gestión de proyectos en línea, mejorando la productividad en equipos de desarrollo y diseño.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Router', icon: Router},
+			{id: 3,name: 'Redux', icon: Redux},
+			{id: 4,name: 'Tailwind', icon: Tailwind},
+			{id: 5, name: 'TypeScript', icon: Typescript}
+		],
+	},
+	{
+		id: 2,
+		image: '/project-2.jpg',
+		category: Category.Star,
+		title: 'World Ranks',
+		url_demo: 'https://world-ranks-2024.netlify.app/',
+		url_github: 'https://github.com/justin-A18/world-ranks',
+		description: 'World Ranks ofrece información actualizada sobre rankings mundiales en diversas áreas, brindando una visión global de la situación.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Router', icon: Router},
+			{id: 3,name: 'Redux', icon: Redux},
+			{id: 4,name: 'Tailwind', icon: Tailwind},
+		],
+	},
+	{
+		id: 3,
+		category: Category.Popular,
+		title: 'Translated.io',
+		url_demo: 'https://translate-io.netlify.app/',
+		url_github: 'https://github.com/justin-A18/Translated-io',
+		description: 'Traductor de textos con narración asistida.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Tailwind', icon: Tailwind},
+		],
+	},
+	{
+		id: 4,
+		category: Category.Popular,
+		title: 'Profile Github',
+		url_demo: 'https://github-profile-00.netlify.app/',
+		url_github: 'https://github.com/justin-A18/Search-profile-github',
+		description: 'Busca usuarios de github y visualiza su informacion.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Tailwind', icon: Tailwind},
+		],
+	},
+	{
+		id: 5,
+		category: Category.Popular,
+		title: 'Vacation Rental Finder',
+		url_demo: 'https://vacation-rental-finder.netlify.app/',
+		url_github: 'https://github.com/justin-A18/Vacation-Rental-Finder',
+		description: 'Encuentra tu próximo alquiler. Explora la gran selección de propiedades.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Tailwind', icon: Tailwind},
+		],
+	},
+	{
+		id: 6,
+		category: Category.Popular,
+		title: 'Pinterest Clone',
+		url_demo: 'https://pinterest-clone-00.netlify.app/',
+		url_github: 'https://github.com/justin-A18/Pinterest-Clone',
+		description: 'Clon practico, desarrollado como proyecto de aprendizaje.',
+		technologies: [
+			{id: 1, name: 'React', icon: React },
+			{id: 2,name: 'Tailwind', icon: Tailwind},
+			{id: 3,name: 'Zustand', icon: Zustand},
+		],
+	}
+];
+
+---
+

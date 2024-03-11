@@ -1,0 +1,62 @@
+---
+import Avatar from './icons/Avatar.astro';
+
+	interface Props {
+		author: string,
+	}
+
+	const {author} = Astro.props;
+
+---
+
+<style>
+	.visible-profile {
+		opacity: 100;
+		visibility: visible;
+	}
+
+	.hidden-profile {
+		opacity: 0;
+		visibility: hidden;
+	}
+	
+</style>
+
+<header class="w-full md:max-w-3xl mx-auto top-0 sticky flex justify-between items-center py-2 px-5 z-20 bg-opacity-80 backdrop-blur-lg">
+
+	<div class="flex items-center gap-4 hidden-profile transition-all duration-300" id="profile">
+		<span class="bg-slate-300 dark:bg-gray-700 rounded-full border-4 border-slate-500 dark:border-gray-900">
+			<Avatar size={2.5}/>
+		</span>
+
+		<p class="text-lg font-bold text-[#475569] dark:text-slate-100">{author}</p>
+	</div>
+	
+	<button class="flex items-center gap-4 outline-none dark:text-slate-100 text-slate-900" id="theme-btn">
+		<i class='bx hidden dark:block bxs-moon bx-sm'></i>
+		<i class='bx dark:hidden bxs-sun bx-sm'></i>
+	</button>
+</header>
+
+<script>
+	const $profile = document.querySelector<HTMLDivElement>('#profile');
+	const $theme = document.querySelector<HTMLButtonElement>('#theme-btn');
+
+	$theme?.addEventListener('click', () => {
+		document.documentElement.classList.toggle('dark');
+	});
+
+	window.addEventListener('scroll',(e) => {
+		const {scrollY} = window;
+		
+		if(scrollY >= 200){
+			$profile?.classList.remove('hidden-profile');
+			$profile?.classList.add('visible-profile');
+		}else{
+			$profile?.classList.remove('visible-profile');
+			$profile?.classList.add('hidden-profile');
+		}
+	});
+</script>
+
+

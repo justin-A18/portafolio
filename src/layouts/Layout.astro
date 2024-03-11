@@ -1,0 +1,45 @@
+---
+interface Props {
+	image: string,
+	title: string
+	author: string
+	keywords: string
+	description: string
+}
+
+const { title,author,description,keywords,image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content={author}>
+		<meta name="keywords" content={keywords}>
+		<meta name="description" content={description} />
+		<meta property="og:image" content={image}>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/avatar.svg" />
+		<title>{title}</title>
+
+		{/* FONTS */}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+		{/* ICONS LIBRARY */}
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+	</head>
+	<body class="bg-white dark:bg-gray-800 pb-0 sm:pb-6 bg-opacity-25 transition-colors duration-300 relative">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	body{
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+</style>
+

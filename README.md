@@ -32,11 +32,10 @@ Para clonar y ejecutar este portafolio localmente, sigue estos pasos:
     ```bash
     cd portafolio
     ```
-
-3. Ejecuta 
-```bash 
-	Astro dev
-```
+3. Corre el projecto en local:
+    ```bash
+    astro dev
+    ```
 
 ## Contacto
 

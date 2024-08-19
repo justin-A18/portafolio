@@ -1,55 +1,67 @@
 ---
-import {Category,type Projects} from '../types'
-import React from '../components/icons/React.astro'
-import Tailwind from '../components/icons/Tailwind.astro'
-import Redux from '../components/icons/Redux.astro'
-import Typescript from '../components/icons/Typescript.astro'
-import Router from '../components/icons/Router.astro'
-import Zustand from '../components/icons/Zustand.astro'
-
+import { Category, type Projects } from '../types';
+import React from '../components/icons/React.astro';
+import Tailwind from '../components/icons/Tailwind.astro';
+import Typescript from '../components/icons/Typescript.astro';
+import Zustand from '../components/icons/Zustand.astro';
+import Next from '../components/icons/Next.astro';
+import Zod from '../components/icons/Zod.astro';
+import Shadcn from '../components/icons/Shadcn.astro';
+import ReactQuery from '../components/icons/ReactQuery.astro';
+import Node from '../components/icons/Node.astro';
+import AstroIcon from '../components/icons/Astro.astro';
+import Jwt from '../components/icons/Jwt.astro';
 
 export const projects: Projects[] = [
 	{
 		id: 1,
-		image: '/project-1.jpg',
+		image: '/project-1.png',
 		category: Category.Star,
-		title: 'Project Hub',
-		url_demo: 'https://projecthubx.netlify.app/',
-		url_github: 'https://github.com/justin-A18/projectHub',
-		description: 'Project Hub simplifica la gestión de proyectos en línea, mejorando la productividad en equipos de desarrollo y diseño.',
+		title: 'Sistema Gestion de sorteos',
+		url_demo: '#',
+		url_github: 'https://github.com/JKmoises/frontend-app-sorteo',
+		description:
+			'Permite a los administradores crear, editar y gestionar sorteos, con una arquitectura sólida y una interfaz intuitiva',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Router', icon: Router},
-			{id: 3,name: 'Redux', icon: Redux},
-			{id: 4,name: 'Tailwind', icon: Tailwind},
-			{id: 5, name: 'TypeScript', icon: Typescript}
+			{ id: 1, name: 'Next', icon: Next },
+			{ id: 3, name: 'TypeScript', icon: Typescript },
+			{ id: 4, name: 'Zod', icon: Zod },
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
+			{ id: 6, name: 'Shadcn', icon: Shadcn },
+			{ id: 5, name: 'TanStack', icon: ReactQuery },
+			{ id: 7, name: 'Zustand', icon: Zustand },
 		],
 	},
 	{
 		id: 2,
-		image: '/project-2.jpg',
+		image: '/project-2.png',
 		category: Category.Star,
-		title: 'World Ranks',
-		url_demo: 'https://world-ranks-2024.netlify.app/',
-		url_github: 'https://github.com/justin-A18/world-ranks',
-		description: 'World Ranks ofrece información actualizada sobre rankings mundiales en diversas áreas, brindando una visión global de la situación.',
+		title: 'RecetIA',
+		url_demo: '#',
+		url_github: 'https://github.com/RecetIA/recet-ia-front-end',
+		description:
+			'Utiliza inteligencia artificial para generar recetas personalizadas según los ingredientes que el usuario tenga disponibles.',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Router', icon: Router},
-			{id: 3,name: 'Redux', icon: Redux},
-			{id: 4,name: 'Tailwind', icon: Tailwind},
+			{ id: 1, name: 'React', icon: React },
+			{ id: 3, name: 'TypeScript', icon: Typescript },
+			{ id: 4, name: 'Zod', icon: Zod },
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
+			{ id: 6, name: 'Shadcn', icon: Shadcn },
+			{ id: 5, name: 'TanStack', icon: ReactQuery },
+			{ id: 7, name: 'Zustand', icon: Zustand },
 		],
 	},
 	{
 		id: 3,
 		category: Category.Popular,
-		title: 'Translated.io',
-		url_demo: 'https://translate-io.netlify.app/',
-		url_github: 'https://github.com/justin-A18/Translated-io',
-		description: 'Traductor de textos con narración asistida.',
+		title: 'Blog App Backend',
+		url_demo: '#',
+		url_github: 'https://github.com/justin-A18/blog-app-backend.git',
+		description: 'Permite a los usuarios crear, editar y gestionar posts',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Tailwind', icon: Tailwind},
+			{ id: 1, name: 'Nodejs', icon: Node },
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
+			{ id: 2, name: 'JWT', icon: Jwt },
 		],
 	},
 	{
@@ -60,8 +72,8 @@ export const projects: Projects[] = [
 		url_github: 'https://github.com/justin-A18/Search-profile-github',
 		description: 'Busca usuarios de github y visualiza su informacion.',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Tailwind', icon: Tailwind},
+			{ id: 1, name: 'React', icon: React },
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
 		],
 	},
 	{
@@ -70,26 +82,26 @@ export const projects: Projects[] = [
 		title: 'Vacation Rental Finder',
 		url_demo: 'https://vacation-rental-finder.netlify.app/',
 		url_github: 'https://github.com/justin-A18/Vacation-Rental-Finder',
-		description: 'Encuentra tu próximo alquiler. Explora la gran selección de propiedades.',
+		description:
+			'Encuentra tu próximo alquiler. Explora la gran selección de propiedades.',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Tailwind', icon: Tailwind},
+			{ id: 1, name: 'React', icon: React },
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
 		],
 	},
 	{
 		id: 6,
 		category: Category.Popular,
-		title: 'Pinterest Clone',
-		url_demo: 'https://pinterest-clone-00.netlify.app/',
-		url_github: 'https://github.com/justin-A18/Pinterest-Clone',
-		description: 'Clon practico, desarrollado como proyecto de aprendizaje.',
+		title: 'Blog Comunity',
+		url_demo: '#',
+		url_github: 'https://github.com/justin-A18/blog-of-community.git',
+		description:
+			'Blog para la comunidad donde se comparte informacion de tecnologia.',
 		technologies: [
-			{id: 1, name: 'React', icon: React },
-			{id: 2,name: 'Tailwind', icon: Tailwind},
-			{id: 3,name: 'Zustand', icon: Zustand},
+			{ id: 1, name: 'Astro', icon: AstroIcon},
+			{ id: 2, name: 'Tailwind', icon: Tailwind },
+			{ id: 3, name: 'TypeScript', icon: Typescript },
 		],
-	}
+	},
 ];
-
 ---
-

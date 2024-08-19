@@ -1,33 +1,28 @@
 ---
 import TechnologyItem from './TechnologyItem.astro';
 import type { Technologies } from '../../types';
-import Code from '../icons/Code.astro'
-import Live from '../icons/Live.astro'
+import Code from '../icons/Code.astro';
+import Live from '../icons/Live.astro';
 
-	interface Props {
-		id: number
-		image?: string
-		title: string,
-		url_demo: string 
-		url_github: string
-		description: string
-		technologies: Technologies[]
-	}
+interface Props {
+	id: number;
+	image?: string;
+	title: string;
+	url_demo: string;
+	url_github: string;
+	description: string;
+	technologies: Technologies[];
+}
 
-	const {
-		id,
-		title,
-		image,
-		url_demo,
-		url_github,
-		description,
-		technologies,
-	} = Astro.props;
-
+const { id, title, image, url_demo, url_github, description, technologies } =
+	Astro.props;
 ---
 
-<article class='grid gap-4 sm:gap-7 md:grid-cols-2 group/transition' id={`${id}`}>
-	<div class='relative w-full md:h-full rounded-xl overflow-hidden dark:bg-gray-700/50 bg-gray-300/50'>
+<article
+	class='grid gap-4 sm:gap-7 md:grid-cols-2 group/transition'
+	id={`${id}`}>
+	<div
+		class='relative w-full md:h-full rounded-xl overflow-hidden dark:bg-gray-700/50 bg-gray-300/50'>
 		<img
 			class='w-full image-translate object-left cursor-pointer h-full aspect-video object-cover translate-x-12 translate-y-12 transition duration-700 rounded-xl group-hover/transition:translate-x-8 group-hover/transition:translate-y-8'
 			src={image}
@@ -36,14 +31,14 @@ import Live from '../icons/Live.astro'
 	</div>
 
 	<div class='flex flex-col gap-3'>
-		<h3 class='dark:text-[#E9E9EA] text-[#344256] text-3xl font-bold'>{title}</h3>
-		<p class='dark:text-[#C4CEDB] text-[#344256] sm:text-lg md:text-base'>{description}</p>
+		<h3 class='dark:text-[#E9E9EA] text-[#344256] text-3xl font-bold'
+			>{title}</h3
+		>
+		<p class='dark:text-[#C4CEDB] text-[#344256] sm:text-lg md:text-base'
+			>{description}</p
+		>
 		<div class='flex items-center gap-3'>
-			{
-				technologies.map(tech => (
-					<TechnologyItem {...tech}/>
-				))
-			}
+			{technologies.map((tech) => <TechnologyItem {...tech} />)}
 		</div>
 		<footer class='flex items-center gap-4 mt-1'>
 			<a
@@ -51,15 +46,21 @@ import Live from '../icons/Live.astro'
 				class='px-6 text-lg text-white dark:text-[#0F172A] py-2 rounded-xl bg-gray-800 dark:bg-white font-medium flex items-center gap-2 dark:hover:bg-gray-300 hover:bg-gray-700 transition-colors duration-300'
 				target='_blank'
 				rel='noreferrer'>
-				Code <Code/>
+				Code <Code />
 			</a>
-			<a
-				href={url_demo}
-				class='px-6 text-lg text-white dark:text-[#0F172A] py-2 rounded-xl bg-gray-800 dark:bg-white font-medium flex items-center gap-2 dark:hover:bg-gray-300 hover:bg-gray-700 transition-colors duration-300'
-				target='_blank'
-				rel='noreferrer'>
-				Live <Live /> 
-			</a>
+			{
+				url_demo !== '#' ? (
+					<a
+						href={url_demo}
+						class='px-6 text-lg text-white dark:text-[#0F172A] py-2 rounded-xl bg-gray-800 dark:bg-white font-medium flex items-center gap-2 dark:hover:bg-gray-300 hover:bg-gray-700 transition-colors duration-300'
+						target='_blank'
+						rel='noreferrer'>
+						Live <Live />
+					</a>
+				) : (
+					''
+				)
+			}
 		</footer>
 	</div>
 </article>

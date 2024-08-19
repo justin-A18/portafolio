@@ -1,0 +1,24 @@
+---
+import CustomLink from '../../atoms/custom-link/CustomLink.astro';
+import { navLinks } from '../../../data/navLinks';
+
+interface Props {
+	className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<nav
+	class={`flex px-3 text-sm font-medium rounded-full text-gray-600 
+	dark:text-gray-200 justify-center items-center bg-white/40 ${className}`}>
+	{
+		navLinks.map(({ href, name }) => (
+			<CustomLink
+				variant='primary'
+				href={href}>
+				{name}
+			</CustomLink>
+		))
+	}
+</nav>

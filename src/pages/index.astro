@@ -1,35 +1,29 @@
 ---
+import HeroGradient from '../components/molecules/HeroGradient.astro';
+import Header from '../components/molecules/header/Header.astro';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Main from '../components/Main.astro'
-import Footer from '../components/Footer.astro'
+import Main from '../components/molecules/Main.astro';
 
 const info = {
 	image: '/lain-bear-2.jpg',
-	author: 'Justin HV',
-	title: "Portfolio justin",
-	keywords: 'desarrollador frontend, diseño web, desarrollo web, experiencia web',
-	description: "Soy un apasionado desarrollador frontend con más de un año de experiencia, dedicado a crear experiencias web cautivadoras y funcionales. ¡Explora mi portfolio y descubre mi enfoque único en el diseño y desarrollo web!"
-}
+	author: 'Justin Huertas Vargas',
+	title: 'Portafolio justin',
+	keywords:
+		'desarrollador frontend, diseño web, desarrollo web, experiencia web',
+	description:
+		'Soy un apasionado desarrollador frontend con más de un año de experiencia, dedicado a crear experiencias web cautivadoras y funcionales. ¡Explora mi portfolio y descubre mi enfoque único en el diseño y desarrollo web!',
+};
 
-const {author,description,image,keywords,title} = info;
-
+const { author, description, image, keywords, title } = info;
 ---
 
-<Layout 
-	author={author} 
-	title={title} 
-	image={image} 
-	keywords={keywords} 
+<Layout
+	author={author}
+	title={title}
+	image={image}
+	keywords={keywords}
 	description={description}>
-
-	<Header author={author} />
-	
-	<Main avatar={image} author={author}/>
-
-	<Footer/>
-
+	<HeroGradient />
+	<Header />
+	<Main />
 </Layout>
-
-
-

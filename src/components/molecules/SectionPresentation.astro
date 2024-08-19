@@ -1,0 +1,47 @@
+---
+import Image from 'astro/components/Image.astro';
+import BadgeLink from '../atoms/custom-link/BadgeLink.astro';
+import TypographyH1 from '../atoms/typography/TypographyH1.astro';
+import TypographyP from '../atoms/typography/TypographyP.astro';
+import { infoLinks } from '../../data/infoLinks';
+import CustomLink from '../atoms/custom-link/CustomLink.astro';
+---
+
+<section class='py-16 md:py-36'>
+	<article class='flex gap-4 mb-4'>
+		<Image
+			width={64}
+			height={64}
+			class='rounded-full shadow-lg size-16 object-cover'
+			src='/lain-bear-2.jpg'
+			alt='Justin Huertas'
+		/>
+
+		<BadgeLink
+			variant='primary'
+			href='https://www.linkedin.com/in/dev-justinh'>
+			Disponible para trabajar
+		</BadgeLink>
+	</article>
+
+	<TypographyH1 variant='primary'>Hey, Soy justin</TypographyH1>
+	<TypographyP variant='primary'>
+		+1 año de experiencia. <strong class='text-[#FEF08A]'>
+			Ingeniero de Sistemas y FullStack Developer</strong
+		>
+		de Lima, Perú 🇵🇪. Especializado en crear experiencias web cautivadoras y funcionales.
+	</TypographyP>
+
+	<div class='flex items-center gap-4 mt-7'>
+		{
+			infoLinks.map(({ name, boxIcon, href }) => (
+				<CustomLink
+					href={href}
+					className='flex items-center gap-2 text-white border rounded-full border-white/60 px-4 py-1 hover:scale-105 transition-all duration-300'>
+					<i class={`bx ${boxIcon} bx-sm`} />
+					{name}
+				</CustomLink>
+			))
+		}
+	</div>
+</section>

@@ -1,0 +1,19 @@
+---
+interface Props {
+	className?: string;
+	variant?: 'default' | 'primary' | 'secondary';
+}
+
+const { className, variant = 'default' } = Astro.props;
+
+const variants = {
+	default: 'text-5xl text-white',
+	primary:
+		'text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white',
+	secondary: '',
+};
+---
+
+<h1 class={`${variants[variant]} ${className}`}>
+	<slot />
+</h1>

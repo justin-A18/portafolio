@@ -1,0 +1,18 @@
+---
+interface Props {
+	className?: string;
+	variant?: 'default' | 'primary' | 'secondary';
+}
+
+const { className, variant = 'default' } = Astro.props;
+
+const variants = {
+	default: 'text-xl',
+	primary: '',
+	secondary: '',
+};
+---
+
+<h4 class={`${variants[variant]} ${className}`}>
+	<slot />
+</h4>

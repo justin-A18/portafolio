@@ -3,7 +3,7 @@ import { type Experience } from '../types';
 export const experience: Experience[] = [
 	{
 		id: 0,
-		date: 'Devdatep Consulting - Actualmente',
+		date: 'Marzo 2022 - Actualmente',
 		title: 'Ingeniería de Sistemas - 2do año',
 		description:
 			'Estoy inmerso en mi segundo año de Ingeniería de Sistemas, donde destaco por mi enfoque proactivo en la resolución de problemas y la aplicación práctica de conceptos avanzados. Mi pasión por la tecnología se refleja en mi compromiso constante con el aprendizaje y la búsqueda de soluciones innovadoras en el ámbito de la ingeniería de sistemas.',

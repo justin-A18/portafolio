@@ -46,7 +46,7 @@ import Avatar from './icons/Avatar.astro';
 		document.documentElement.classList.toggle('dark');
 	});
 
-	window.addEventListener('scroll',(e) => {
+	window.addEventListener('scroll',() => {
 		const {scrollY} = window;
 		
 		if(scrollY >= 200){

@@ -68,5 +68,49 @@ const imageUrl = image
 		<main class="max-w-[658px] mx-auto px-5 sm:px-6 py-4 space-y-4">
 			<slot />
 		</main>
+		<script>
+			const revealElements = document.querySelectorAll("[data-reveal]");
+			const navLinks = document.querySelectorAll("[data-nav-link]");
+			const sections = document.querySelectorAll("section[id]");
+
+			const revealObserver = new IntersectionObserver(
+				(entries) => {
+					for (const entry of entries) {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("is-visible");
+							revealObserver.unobserve(entry.target);
+						}
+					}
+				},
+				{ rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
+			);
+
+			revealElements.forEach((element, index) => {
+				element.setAttribute("style", `--reveal-delay: ${Math.min(index * 45, 180)}ms`);
+				revealObserver.observe(element);
+			});
+
+			const setActiveNav = (id) => {
+				navLinks.forEach((link) => {
+					const isActive = link.getAttribute("href") === `#${id}`;
+					link.toggleAttribute("data-active", isActive);
+				});
+			};
+
+			const navObserver = new IntersectionObserver(
+				(entries) => {
+					const visibleEntry = entries
+						.filter((entry) => entry.isIntersecting)
+						.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+					if (visibleEntry?.target.id) {
+						setActiveNav(visibleEntry.target.id);
+					}
+				},
+				{ rootMargin: "-20% 0px -55% 0px", threshold: [0.1, 0.35, 0.6] },
+			);
+
+			sections.forEach((section) => navObserver.observe(section));
+		</script>
 	</body>
 </html>

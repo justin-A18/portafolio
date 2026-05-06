@@ -1,8 +1,9 @@
 ---
 import profileImage from "../../assets/imgs/lain.jpg";
+import SocialLink from "../molecules/SocialLink.astro";
 ---
 
-<section class="w-full py-8">
+<section id="intro" class="w-full scroll-mt-10 py-8" data-reveal>
 	<div
 		class="size-14 overflow-hidden rounded-xl bg-[var(--color-surface)] ring-1 ring-white/10"
 		aria-label="Avatar de Justin Andre Huertas Vargas"
@@ -22,8 +23,15 @@ import profileImage from "../../assets/imgs/lain.jpg";
 		<p
 			class="mt-0.5 font-sans text-base leading-6 text-[var(--color-text-muted)]"
 		>
-			Frontend Engineer
+			Frontend Engineer · Lima, Peru · GMT-5
 		</p>
+	</div>
+
+	<div class="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+		<SocialLink href="mailto:justin.frontend08@gmail.com" label="Email" />
+		<SocialLink href="#contact" label="LinkedIn" />
+		<SocialLink href="#contact" label="GitHub" />
+		<SocialLink href="#projects" label="Projects" />
 	</div>
 
 	<div
@@ -69,16 +77,23 @@ import profileImage from "../../assets/imgs/lain.jpg";
 			class="grid size-6 place-items-center rounded-md bg-[var(--color-surface)] font-mono text-sm font-medium text-white ring-1 ring-[var(--color-border)]"
 			>C</kbd
 		>
-		<span>para copiar mi email</span>
+		<span data-copy-email-label>para copiar mi email</span>
 	</button>
 </section>
 
 <script>
 	const copyEmailButton = document.querySelector("[data-copy-email]");
+	const copyEmailLabel = document.querySelector("[data-copy-email-label]");
 	const email = "justin.frontend08@gmail.com";
 
 	const copyEmail = async () => {
 		await navigator.clipboard?.writeText(email);
+		if (!copyEmailLabel) return;
+
+		copyEmailLabel.textContent = "email copiado";
+		window.setTimeout(() => {
+			copyEmailLabel.textContent = "para copiar mi email";
+		}, 1600);
 	};
 
 	copyEmailButton?.addEventListener("click", copyEmail);

@@ -1,0 +1,22 @@
+---
+import type { SvgComponent } from "astro/types";
+
+interface Props {
+	name: string;
+	icon: SvgComponent;
+}
+
+const { name, icon } = Astro.props;
+const Icon = icon;
+---
+
+<li class="group min-w-0">
+	<div
+		class="grid aspect-square place-items-center rounded-xl bg-[var(--color-surface)] p-3 ring-1 ring-white/10 transition duration-200 group-hover:-translate-y-0.5 group-hover:bg-[#262626] group-hover:ring-white/20"
+	>
+		<Icon class="size-7 object-contain" aria-hidden="true" />
+	</div>
+	<p class="mt-2 truncate text-center font-mono text-[0.6875rem] leading-4 text-[var(--color-text-muted)]">
+		{name}
+	</p>
+</li>

@@ -1,0 +1,28 @@
+---
+import Icon from "../atoms/Icon.astro";
+
+const navItems = [
+	{ href: "#intro", label: "Intro", icon: "user" },
+	{ href: "#experience", label: "Experience", icon: "briefcase" },
+	{ href: "#projects", label: "Projects", icon: "grid" },
+	{ href: "#experiments", label: "Experiments", icon: "sparkles" },
+	{ href: "#toolkit", label: "Toolkit", icon: "code" },
+	{ href: "#contact", label: "Contact", icon: "mail" },
+] as const;
+---
+
+<nav
+	class="fixed inset-x-0 bottom-5 z-50 mx-auto flex w-max max-w-[calc(100%-2rem)] items-center gap-1 rounded-2xl border border-white/10 bg-[#141414]/85 p-1.5 shadow-2xl shadow-black/40 backdrop-blur-md"
+	aria-label="Navegacion principal"
+>
+	{navItems.map((item) => (
+		<a
+			class="group grid size-10 place-items-center rounded-xl text-[var(--color-text-muted)] transition-colors hover:bg-white/5 hover:text-white data-[active]:bg-white/10 data-[active]:text-white"
+			href={item.href}
+			aria-label={item.label}
+			data-nav-link
+		>
+			<Icon name={item.icon} label={item.label} />
+		</a>
+	))}
+</nav>

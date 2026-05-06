@@ -1,7 +1,13 @@
 ---
 import Layout from "../components/layouts/Layout.astro";
+import ContactSection from "../components/organisms/ContactSection.astro";
+import CurrentToolkit from "../components/organisms/CurrentToolkit.astro";
+import ExperimentsSection from "../components/organisms/ExperimentsSection.astro";
+import FloatingNav from "../components/organisms/FloatingNav.astro";
 import ProfileIntro from "../components/organisms/ProfileIntro.astro";
+import ProjectsSection from "../components/organisms/ProjectsSection.astro";
 import SiteHeader from "../components/organisms/SiteHeader.astro";
+import WorkExperience from "../components/organisms/WorkExperience.astro";
 ---
 
 <Layout
@@ -10,4 +16,10 @@ import SiteHeader from "../components/organisms/SiteHeader.astro";
 >
 	<SiteHeader />
 	<ProfileIntro />
+	<WorkExperience />
+	<ProjectsSection />
+	<ExperimentsSection />
+	<CurrentToolkit />
+	<ContactSection />
+	<FloatingNav />
 </Layout>

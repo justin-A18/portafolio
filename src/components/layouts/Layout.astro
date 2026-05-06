@@ -1,0 +1,72 @@
+---
+import "../../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	type?: "website" | "article";
+	noindex?: boolean;
+}
+
+const {
+	title = "Justin Andre Huertas Vargas | Frontend Engineer",
+	description = "Portafolio personal de Justin Andre Huertas Vargas, Frontend Engineer en Lima, Peru. Experiencia en React, Next.js, TypeScript, Astro, arquitectura frontend, BFF, performance web, SEO tecnico y productos digitales enterprise.",
+	image,
+	type = "website",
+	noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(
+	Astro.url.pathname,
+	Astro.site ?? Astro.url,
+).toString();
+const imageUrl = image
+	? new URL(image, Astro.site ?? Astro.url).toString()
+	: undefined;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Justin Andre Huertas Vargas" />
+		<meta
+			name="keywords"
+			content="Justin Andre Huertas Vargas, Justin Huertas, Frontend Engineer, Frontend Developer, React, Next.js, TypeScript, Astro, Tailwind CSS, arquitectura frontend, BFF, performance web, SEO tecnico, Playwright, Lima Peru"
+		/>
+		<meta
+			name="robots"
+			content={noindex ? "noindex, nofollow" : "index, follow"}
+		/>
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="theme-color" content="#0d0d0d" />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="Justin Andre Huertas Vargas" />
+		<meta property="og:locale" content="es_PE" />
+		{imageUrl && <meta property="og:image" content={imageUrl} />}
+
+		<meta
+			name="twitter:card"
+			content={imageUrl ? "summary_large_image" : "summary"}
+		/>
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+	</head>
+	<body>
+		<main class="max-w-[658px] mx-auto px-5 sm:px-6 py-4 space-y-4">
+			<slot />
+		</main>
+	</body>
+</html>

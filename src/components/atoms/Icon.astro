@@ -1,0 +1,40 @@
+---
+interface Props {
+	name: "cloud-sun" | "clock";
+	label: string;
+}
+
+const { name, label } = Astro.props;
+---
+
+{
+	name === "cloud-sun" && (
+		<svg
+			class="block size-5 fill-none stroke-current stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]"
+			viewBox="0 0 24 24"
+			aria-label={label}
+			role="img"
+		>
+			<path d="M12 2.75v2.5" />
+			<path d="m4.93 4.93 1.77 1.77" />
+			<path d="M2.75 12h2.5" />
+			<path d="m19.07 4.93-1.77 1.77" />
+			<path d="M17.25 12a5.25 5.25 0 0 0-10.18-1.8" />
+			<path d="M8.4 19.25h8.1a3.25 3.25 0 0 0 .28-6.49 4.8 4.8 0 0 0-8.98 1.2 2.66 2.66 0 0 0 .6 5.29Z" />
+		</svg>
+	)
+}
+
+{
+	name === "clock" && (
+		<svg
+			class="block size-[1.2rem] fill-none stroke-current stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]"
+			viewBox="0 0 24 24"
+			aria-label={label}
+			role="img"
+		>
+			<circle cx="12" cy="12" r="8.25" />
+			<path d="M12 7.5V12l3 2" />
+		</svg>
+	)
+}

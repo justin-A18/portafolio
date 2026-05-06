@@ -1,0 +1,95 @@
+---
+import profileImage from "../../assets/imgs/lain.jpg";
+---
+
+<section class="w-full py-8">
+	<div
+		class="size-14 overflow-hidden rounded-xl bg-[var(--color-surface)] ring-1 ring-white/10"
+		aria-label="Avatar de Justin Andre Huertas Vargas"
+	>
+		<img
+			class="size-full object-cover"
+			src={profileImage.src}
+			alt="Avatar de Justin Andre Huertas Vargas"
+			loading="eager"
+		/>
+	</div>
+
+	<div class="mt-5">
+		<h1 class="font-sans text-base font-medium leading-6 text-white">
+			Justin Andre Huertas Vargas
+		</h1>
+		<p
+			class="mt-0.5 font-sans text-base leading-6 text-[var(--color-text-muted)]"
+		>
+			Frontend Engineer
+		</p>
+	</div>
+
+	<div
+		class="mt-8 space-y-6 font-sans text-base leading-7 text-[var(--color-text-muted)]"
+	>
+		<p>
+			Construyo productos digitales escalables con
+			<span class="text-white">React</span>, <span class="text-white"
+				>Next.js</span
+			>
+			y <span class="text-white">TypeScript</span>, enfocados en <span class="text-white"
+				>performance</span
+			>, <span class="text-white">arquitectura frontend</span>, <span class="text-white"
+				>seguridad</span
+			> y <span class="text-white">experiencia de usuario</span>.
+		</p>
+
+		<p>
+			He trabajado en <span class="text-white">plataformas bancarias</span>,
+			<span class="text-white">e-commerce</span> y <span class="text-white"
+				>productos enterprise</span
+			> desarrollando <span class="text-white">flujos críticos</span>,
+			<span class="text-white">sistemas mantenibles</span> y experiencias modernas
+			alineadas a <span class="text-white">objetivos reales de negocio</span>.
+		</p>
+
+		<p>
+			Mi enfoque combina <span class="text-white">ingeniería</span>, <span
+				class="text-white">diseño</span
+			> y <span class="text-white">producto</span> para crear aplicaciones
+			<span class="text-white">rápidas</span>, <span class="text-white">robustas</span>
+			y <span class="text-white">preparadas para escalar</span>.
+		</p>
+	</div>
+
+	<button
+		class="mt-7 inline-flex items-center gap-2 text-left font-sans text-base leading-6 text-[var(--color-text-muted)] transition-colors hover:text-white"
+		type="button"
+		data-copy-email
+	>
+		<span>Presiona</span>
+		<kbd
+			class="grid size-6 place-items-center rounded-md bg-[var(--color-surface)] font-mono text-sm font-medium text-white ring-1 ring-[var(--color-border)]"
+			>C</kbd
+		>
+		<span>para copiar mi email</span>
+	</button>
+</section>
+
+<script>
+	const copyEmailButton = document.querySelector("[data-copy-email]");
+	const email = "justin.frontend08@gmail.com";
+
+	const copyEmail = async () => {
+		await navigator.clipboard?.writeText(email);
+	};
+
+	copyEmailButton?.addEventListener("click", copyEmail);
+	window.addEventListener("keydown", (event) => {
+		if (
+			event.key.toLowerCase() === "c" &&
+			!event.metaKey &&
+			!event.ctrlKey &&
+			!event.altKey
+		) {
+			copyEmail();
+		}
+	});
+</script>

@@ -1,0 +1,37 @@
+---
+import Icon from "../atoms/Icon.astro";
+---
+
+<time
+	class="inline-flex items-center gap-2 whitespace-nowrap font-mono text-xs leading-none text-(--color-text-muted) not-italic"
+	datetime=""
+	data-local-time
+>
+	<Icon name="clock" label="Hora local" />
+	<span data-local-time-value>--:--</span>
+	<span>GMT-5</span>
+</time>
+
+<script>
+	const localTime = document.querySelector("[data-local-time]");
+	const localTimeValue = localTime?.querySelector("[data-local-time-value]");
+	const timeZone = "America/Lima";
+
+	const updateLocalTime = () => {
+		if (!localTime || !localTimeValue) return;
+
+		const now = new Date();
+		const formattedTime = new Intl.DateTimeFormat("en-US", {
+			hour: "numeric",
+			minute: "2-digit",
+			hour12: true,
+			timeZone,
+		}).format(now);
+
+		localTime.setAttribute("datetime", now.toISOString());
+		localTimeValue.textContent = formattedTime;
+	};
+
+	updateLocalTime();
+	window.setInterval(updateLocalTime, 30_000);
+</script>

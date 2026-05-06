@@ -25,5 +25,5 @@ pnpm-debug.log*
 
 # skills
 
-.agents/*
+.agents/
 skills-lock.json

@@ -67,44 +67,10 @@ import SocialLink from "../molecules/SocialLink.astro";
 		</p>
 	</div>
 
-	<button
-		class="mt-7 inline-flex items-center gap-2 text-left font-sans text-base leading-6 text-[var(--color-text-muted)] transition-colors hover:text-white"
-		type="button"
-		data-copy-email
+	<p
+		class="mt-7 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]"
 	>
-		<span>Presiona</span>
-		<kbd
-			class="grid size-6 place-items-center rounded-md bg-[var(--color-surface-soft)] font-mono text-sm font-medium text-white ring-1 ring-[var(--color-accent-muted)]"
-			>C</kbd
-		>
-		<span data-copy-email-label>para copiar mi email</span>
-	</button>
+		<span class="size-1.5 rounded-full bg-[var(--color-accent)]"></span>
+		<span>Explorando la frontera entre lógica, señal y presencia</span>
+	</p>
 </section>
-
-<script>
-	const copyEmailButton = document.querySelector("[data-copy-email]");
-	const copyEmailLabel = document.querySelector("[data-copy-email-label]");
-	const email = "justin.frontend08@gmail.com";
-
-	const copyEmail = async () => {
-		await navigator.clipboard?.writeText(email);
-		if (!copyEmailLabel) return;
-
-		copyEmailLabel.textContent = "email copiado";
-		window.setTimeout(() => {
-			copyEmailLabel.textContent = "para copiar mi email";
-		}, 1600);
-	};
-
-	copyEmailButton?.addEventListener("click", copyEmail);
-	window.addEventListener("keydown", (event) => {
-		if (
-			event.key.toLowerCase() === "c" &&
-			!event.metaKey &&
-			!event.ctrlKey &&
-			!event.altKey
-		) {
-			copyEmail();
-		}
-	});
-</script>

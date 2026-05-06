@@ -1,46 +1,92 @@
-# Astro Starter Kit: Basics
+# Justin Andre Huertas Vargas — Portfolio
+
+Personal one-page portfolio built with Astro and Tailwind CSS. The site presents my work as a Frontend Engineer, including professional experience, hackathon projects, experiments, daily toolkit, and contact links.
+
+The visual direction is dark, minimal, and inspired by pixel/cyber workstation aesthetics.
+
+## Stack
+
+- Astro
+- Tailwind CSS v4
+- TypeScript
+- Inter Variable
+- Geist Mono Variable
+
+## Sections
+
+- Intro
+- Experience
+- Projects
+- Experiments
+- Current Toolkit
+- Contact
+
+## Features
+
+- One-page navigation by section
+- Subtle scroll reveal animations without animation dependencies
+- Active floating navigation state
+- SEO metadata and Open Graph basics
+- Local SVG toolkit icons
+- Dark pixel workstation color palette
+- Responsive layout
+
+## Getting Started
+
+Install dependencies:
 
 ```sh
-pnpm create astro@latest -- --template basics
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Run the development server:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+pnpm dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Build for production:
 
-## 🧞 Commands
+```sh
+pnpm build
+```
 
-All commands are run from the root of the project, from a terminal:
+Preview the production build:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+```sh
+pnpm preview
+```
 
-## 👀 Want to learn more?
+## Project Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```txt
+src/
+  assets/
+    icons/
+    imgs/
+  components/
+    atoms/
+    molecules/
+    organisms/
+    layouts/
+  pages/
+  styles/
+```
+
+## Design Notes
+
+The interface follows a restrained developer-minimal style:
+
+- Small typography
+- Monospace labels
+- Dark surfaces
+- Soft section reveals
+- Subtle accent color usage
+- Floating icon navigation
+
+Color direction: `Pixel Workstation`.
+
+## Author
+
+Justin Andre Huertas Vargas  
+Frontend Engineer based in Lima, Peru.

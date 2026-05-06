@@ -10,9 +10,9 @@ interface Props {
 const { name, role, period, description, mark } = Astro.props;
 ---
 
-<article class="group border-t border-white/10 py-5">
+<article class="group border-t border-[var(--color-border)] py-5">
 	<div class="flex items-start gap-4">
-		<div class="grid size-9 shrink-0 place-items-center rounded-xl bg-[var(--color-surface)] font-mono text-xs font-medium text-white ring-1 ring-white/10">
+		<div class="grid size-9 shrink-0 place-items-center rounded-xl bg-[var(--color-surface)] font-mono text-xs font-medium text-white ring-1 ring-[var(--color-border)] transition-colors group-hover:ring-[var(--color-accent-muted)]">
 			{mark}
 		</div>
 		<div class="min-w-0 flex-1">

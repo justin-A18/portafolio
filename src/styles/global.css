@@ -15,11 +15,14 @@
 	--font-geist-mono:
 		"Geist Mono Variable", "Geist Mono", ui-monospace, SFMono-Regular, Menlo,
 		Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--color-background: #0d0d0d;
-	--color-surface: #1f1f1f;
-	--color-text-muted: #8f8f8f;
-	--color-text: #bbbbbb;
-	--color-border: #686868;
+	--color-background: #080812;
+	--color-surface: #11111d;
+	--color-surface-soft: #181827;
+	--color-text: #d7d4e8;
+	--color-text-muted: #8f8aa3;
+	--color-border: #2b2a3d;
+	--color-accent: #e34b78;
+	--color-accent-muted: #7f2f4a;
 }
 
 html,

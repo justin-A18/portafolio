@@ -1,12 +1,17 @@
 ---
+import { featuredProjects } from "../../constants/featured-projects";
 import { projects } from "../../constants/projects";
+import FeaturedProjectCard from "../molecules/FeaturedProjectCard.astro";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import WorkCard from "../molecules/WorkCard.astro";
 ---
 
 <section id="projects" class="scroll-mt-10 pt-14" data-reveal>
-	<SectionHeading title="Projects" eyebrow="hackathons" />
-	<div>
+	<SectionHeading title="Projects" eyebrow="featured builds" />
+	<div class="space-y-6">
+		{featuredProjects.map((project) => <FeaturedProjectCard {...project} />)}
+	</div>
+	<div class="mt-6">
 		{projects.map((project) => <WorkCard {...project} />)}
 	</div>
 </section>

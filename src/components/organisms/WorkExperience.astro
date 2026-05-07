@@ -1,12 +1,12 @@
 ---
 import { experiences } from "../../constants/experience";
+import ExperienceCard from "../molecules/ExperienceCard.astro";
 import SectionHeading from "../molecules/SectionHeading.astro";
-import WorkCard from "../molecules/WorkCard.astro";
 ---
 
 <section id="experience" class="scroll-mt-10 pt-14" data-reveal>
 	<SectionHeading title="Experience" eyebrow="selected roles" />
 	<div>
-		{experiences.map((experience) => <WorkCard {...experience} />)}
+		{experiences.map((experience) => <ExperienceCard {...experience} />)}
 	</div>
 </section>

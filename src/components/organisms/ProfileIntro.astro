@@ -1,5 +1,6 @@
 ---
 import profileImage from "../../assets/imgs/profile/lain.jpg";
+import { socialLinks } from "../../constants/social-links";
 import SocialLink from "../molecules/SocialLink.astro";
 ---
 
@@ -28,9 +29,7 @@ import SocialLink from "../molecules/SocialLink.astro";
 	</div>
 
 	<div class="mt-5 flex flex-wrap gap-x-5 gap-y-2">
-		<SocialLink href="mailto:justin.frontend08@gmail.com" label="Email" />
-		<SocialLink href="#contact" label="LinkedIn" />
-		<SocialLink href="#contact" label="GitHub" />
+		{socialLinks.map((link) => <SocialLink {...link} />)}
 	</div>
 
 	<div

@@ -71,7 +71,7 @@ const imageUrl = image
 		<script>
 			const revealElements = document.querySelectorAll("[data-reveal]");
 			const navLinks = document.querySelectorAll("[data-nav-link]");
-			const sections = document.querySelectorAll("section[id]");
+			const sections = document.querySelectorAll("section[id], footer[id]");
 
 			const revealObserver = new IntersectionObserver(
 				(entries) => {

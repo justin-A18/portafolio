@@ -6,6 +6,7 @@ export const projects = [
 		mark: "CQ",
 		description:
 			"Aplicación colaborativa de sorteos construida durante hackathon, con arquitectura por capas, fetching eficiente y estado global mantenible.",
+		githubUrl: "https://github.com/admoisesdev/frontend-app-sorteo",
 	},
 	{
 		name: "Generador de recetas con IA",
@@ -14,5 +15,6 @@ export const projects = [
 		mark: "AI",
 		description:
 			"Aplicacion impulsada por IA para generar recetas personalizadas, con autenticacion JWT y backend NestJS.",
+		githubUrl: "https://github.com/RecetIA",
 	},
 ] as const;

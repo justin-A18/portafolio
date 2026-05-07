@@ -5,12 +5,25 @@ interface Props {
 	period: string;
 	description: string;
 	mark: string;
+	githubUrl?: string;
 }
 
-const { name, role, period, description, mark } = Astro.props;
+const { name, role, period, description, mark, githubUrl } = Astro.props;
+const CardRoot = githubUrl ? "a" : "article";
+const rootAttributes = githubUrl
+	? {
+			href: githubUrl,
+			target: "_blank",
+			rel: "noreferrer",
+			"aria-label": `Abrir repositorio de ${name} en GitHub`,
+		}
+	: {};
 ---
 
-<article class="group border-t border-[var(--color-border)] py-5">
+<CardRoot
+	{...rootAttributes}
+	class="group block border-t border-[var(--color-border)] py-5 text-current no-underline transition-colors hover:border-[var(--color-accent-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
+>
 	<div class="flex items-start gap-4">
 		<div class="grid size-9 shrink-0 place-items-center rounded-xl bg-[var(--color-surface)] font-mono text-xs font-medium text-white ring-1 ring-[var(--color-border)] transition-colors group-hover:ring-[var(--color-accent-muted)]">
 			{mark}
@@ -24,4 +37,4 @@ const { name, role, period, description, mark } = Astro.props;
 			<p class="mt-3 text-sm leading-6 text-[var(--color-text-muted)]">{description}</p>
 		</div>
 	</div>
-</article>
+</CardRoot>

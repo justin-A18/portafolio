@@ -11,7 +11,9 @@ interface Props {
 const { name, role, period, description, mark, logo } = Astro.props;
 ---
 
-<article class="group border-t border-[var(--color-border)] py-5">
+<article
+	class="group border-t border-[var(--color-border)] py-5 transition-colors hover:border-[var(--color-accent-muted)]"
+>
 	<div class="grid gap-4 sm:grid-cols-[3.75rem_minmax(0,1fr)] sm:items-start">
 		<div class="relative size-14 shrink-0">
 			<div

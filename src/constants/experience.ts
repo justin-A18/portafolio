@@ -6,7 +6,7 @@ export const experiences = [
 	{
 		name: "OpenLab Latam",
 		role: "Frontend Developer · Plataformas enterprise y e-commerce",
-		period: "Enero 2024 - Actualidad",
+		period: "Ene 2024 - Actualidad",
 		mark: "OL",
 		logo: openlabLogo,
 		description:

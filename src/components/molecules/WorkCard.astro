@@ -5,15 +5,27 @@ interface Props {
 	period: string;
 	description: string;
 	mark: string;
+	logo?: ImageMetadata;
 }
 
-const { name, role, period, description, mark } = Astro.props;
+const { name, role, period, description, mark, logo } = Astro.props;
 ---
 
 <article class="group border-t border-[var(--color-border)] py-5">
 	<div class="flex items-start gap-4">
 		<div class="grid size-9 shrink-0 place-items-center rounded-xl bg-[var(--color-surface)] font-mono text-xs font-medium text-white ring-1 ring-[var(--color-border)] transition-colors group-hover:ring-[var(--color-accent-muted)]">
-			{mark}
+			{
+				logo ? (
+					<img
+						class="max-h-5 max-w-5 object-contain"
+						src={logo.src}
+						alt={`Logo de ${name}`}
+						loading="lazy"
+					/>
+				) : (
+					mark
+				)
+			}
 		</div>
 		<div class="min-w-0 flex-1">
 			<div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">

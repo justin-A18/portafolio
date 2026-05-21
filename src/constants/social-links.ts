@@ -13,6 +13,6 @@ export const socialLinks = [
 	},
 	{
 		label: "CV",
-		href: "https://drive.google.com/file/d/1cePwmIpS8mnsZN0nx9dXrV8J38-CT4Ca/view?usp=sharing",
+		href: "https://drive.google.com/file/d/1czQgLkEhCf_qYgKKL2CTR7vWWDwyHi1c/view?usp=sharing",
 	},
 ] as const;

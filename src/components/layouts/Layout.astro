@@ -31,8 +31,8 @@ const imageUrl = image
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/avatar.svg" />
+		<link rel="icon" href="/avatar.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -86,7 +86,10 @@ const imageUrl = image
 			);
 
 			revealElements.forEach((element, index) => {
-				element.setAttribute("style", `--reveal-delay: ${Math.min(index * 45, 180)}ms`);
+				element.setAttribute(
+					"style",
+					`--reveal-delay: ${Math.min(index * 45, 180)}ms`,
+				);
 				revealObserver.observe(element);
 			});
 

@@ -3,7 +3,7 @@ export const experiments = [
 		title: "Linux workstation",
 		type: "setup",
 		description:
-			"Capturas, configuraciones y decisiones de mi entorno Linux para trabajar rapido, reproducible y sin friccion.",
+			"Configuraciones y decisiones de mi entorno Linux para trabajar rapido, reproducible y sin friccion.",
 		tags: ["linux", "zsh", "docker"],
 		variant: "terminal",
 	},

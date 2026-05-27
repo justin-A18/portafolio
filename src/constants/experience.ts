@@ -7,7 +7,8 @@ export const experiences = [
 	{
 		name: "OpenLab Latam",
 		role: "Frontend Developer · Plataformas enterprise y e-commerce",
-		period: "Ene 2024 - Mayo 2026",
+		//period: "Ene 2024 - Mayo 2026",
+		period: "",
 		mark: "OL",
 		logo: openlabLogo,
 		description:
@@ -16,7 +17,8 @@ export const experiences = [
 	{
 		name: "Alfin Banco",
 		role: "Frontend Engineer · Arquitectura Frontend, BFF y seguridad",
-		period: "Nov 2025 - Feb 2026",
+		//period: "Nov 2025 - Feb 2026",
+		period: "",
 		mark: "AB",
 		logo: alfinLogo,
 		description:
@@ -25,7 +27,8 @@ export const experiences = [
 	{
 		name: "FractalUp",
 		role: "Frontend Developer · UI Systems & Web Components",
-		period: "Oct - Dic 2024",
+		//Oct - Dic 2024
+		period: "",
 		mark: "FU",
 		logo: fractalupLogo,
 		description:
@@ -34,7 +37,8 @@ export const experiences = [
 	{
 		name: "DEVDATEP Consulting",
 		role: "Frontend Developer · Next.js, TypeScript, Clean Architecture, Performance",
-		period: "Ago - Sept 2024",
+		//	period: "Ago - Sept 2024",
+		period: "",
 		mark: "DP",
 		logo: devdatepLogo,
 		description:
